@@ -295,7 +295,7 @@ class _RestClient implements RestClient {
             .compose(_dio.options, '/',
                 queryParameters: queryParameters, data: _data)
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = _result.data!;
+    final value = _result.data;
     return value;
   }
 
@@ -309,7 +309,7 @@ class _RestClient implements RestClient {
             .compose(_dio.options, '/',
                 queryParameters: queryParameters, data: _data)
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = _result.data!;
+    final value = _result.data;
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;
   }
@@ -441,6 +441,7 @@ class _RestClient implements RestClient {
         'customfiles',
         MultipartFile.fromBytes(
           i,
+          filename: null,
         ))));
     _data.files.add(MapEntry(
         'file',
