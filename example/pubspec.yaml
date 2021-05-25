@@ -3,19 +3,28 @@ description: Retrofit generator
 version: 0.0.1
 author: Trevor Wang <trevor.wang@qq.com>
 
+publish_to: 'none'
+
+
 environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   retrofit:
+    path: ../annotation
   json_annotation: ^4.0.0
   logger: ^1.0.0
-  dio: ^4.0.0
+  dio:
+    git: 
+      url: https://github.com/syan-park/dio.git 
+      path: dio
+      version: ^4.0.0
 
 dev_dependencies:
   test: 1.16.5
   retrofit_generator:
-  build_runner: ^2.0.1
+    path: ../generator
+  build_runner: ^2.0.4
   json_serializable: ^4.0.3
   mock_web_server:
 
